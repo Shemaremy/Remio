@@ -1,13 +1,32 @@
-import React from 'react'
-import '../App.css'
+import React from "react";
 
-function Part1() {
-
+const Part2 = () => {
   return (
-    <div className='App'>
-      My name Remio
-    </div>
-  )
-}
+    <section className="main-banner" id="top">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-6 align-self-center">
+            <div className="header-text">
+              <h6>Welcome to our school</h6>
+              <h2>
+                Best Place To Learn Graphic <em>Design!</em>
+              </h2>
+              <div className="main-button-gradient">
+                <div className="scroll-to-section">
+                  <a href="#contact-section">Join Us Now!</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-6">
+            <div className="right-image">
+              <img src="assets/images/banner-right-image.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default Part1
+export default Part2;
