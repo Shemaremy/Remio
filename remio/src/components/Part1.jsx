@@ -9,7 +9,7 @@ const Part1 = () => {
             <nav className="main-nav">
               {/* ***** Logo Start ***** */}
               <a href="index.html" className="logo">
-                <img src="assets/images/templatemo-eduwell.png" alt="EduWell Template" />
+                <img src="/images/templatemo-eduwell.png" alt="EduWell Template" />
               </a>
               {/* ***** Logo End ***** */}
               {/* ***** Menu Start ***** */}

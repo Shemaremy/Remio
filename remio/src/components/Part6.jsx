@@ -25,7 +25,7 @@ const Part6 = () => {
                 </p>
                 <h4>Catherine Walk</h4>
                 <span>CEO &amp; Founder</span>
-                <img src="assets/images/quote.png" alt="" />
+                <img src="/images/quote.png" alt="" />
               </div>
               <div className="item">
                 <p>
@@ -34,7 +34,7 @@ const Part6 = () => {
                 </p>
                 <h4>David Martin</h4>
                 <span>CTO of Tech Company</span>
-                <img src="assets/images/quote.png" alt="" />
+                <img src="/images/quote.png" alt="" />
               </div>
               <div className="item">
                 <p>
@@ -43,7 +43,7 @@ const Part6 = () => {
                 </p>
                 <h4>Sophia Whity</h4>
                 <span>CEO and Co-Founder</span>
-                <img src="assets/images/quote.png" alt="" />
+                <img src="/images/quote.png" alt="" />
               </div>
               <div className="item">
                 <p>
@@ -52,7 +52,7 @@ const Part6 = () => {
                 </p>
                 <h4>Helen Shiny</h4>
                 <span>Tech Officer</span>
-                <img src="assets/images/quote.png" alt="" />
+                <img src="/images/quote.png" alt="" />
               </div>
               <div className="item">
                 <p>
@@ -61,7 +61,7 @@ const Part6 = () => {
                 </p>
                 <h4>George Soft</h4>
                 <span>Gadget Reviewer</span>
-                <img src="assets/images/quote.png" alt="" />
+                <img src="/images/quote.png" alt="" />
               </div>
               <div className="item">
                 <p>
@@ -70,7 +70,7 @@ const Part6 = () => {
                 </p>
                 <h4>Andrew Hall</h4>
                 <span>Marketing Manager</span>
-                <img src="assets/images/quote.png" alt="" />
+                <img src="/images/quote.png" alt="" />
               </div>
               <div className="item">
                 <p>
@@ -79,7 +79,7 @@ const Part6 = () => {
                 </p>
                 <h4>Maxi Power</h4>
                 <span>Fashion Designer</span>
-                <img src="assets/images/quote.png" alt="" />
+                <img src="/images/quote.png" alt="" />
               </div>
               <div className="item">
                 <p>
@@ -88,7 +88,7 @@ const Part6 = () => {
                 </p>
                 <h4>Olivia Too</h4>
                 <span>Creative Designer</span>
-                <img src="assets/images/quote.png" alt="" />
+                <img src="/images/quote.png" alt="" />
               </div>
             </div>
           </div>

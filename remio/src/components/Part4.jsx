@@ -43,7 +43,7 @@ const Part4 = () => {
                         <div>
                           <div className="left-image">
                             <img
-                              src="assets/images/courses-01.jpg"
+                              src="/images/courses-01.jpg"
                               alt=""
                             />
                             <div className="price">
@@ -82,7 +82,7 @@ const Part4 = () => {
                         <div>
                           <div className="left-image">
                             <img
-                              src="assets/images/courses-02.jpg"
+                              src="/images/courses-02.jpg"
                               alt=""
                             />
                             <div className="price">
@@ -115,7 +115,7 @@ const Part4 = () => {
                         <div>
                           <div className="left-image">
                             <img
-                              src="assets/images/courses-03.jpg"
+                              src="/images/courses-03.jpg"
                               alt=""
                             />
                             <div className="price">
@@ -148,7 +148,7 @@ const Part4 = () => {
                         <div>
                           <div className="left-image">
                             <img
-                              src="assets/images/courses-04.jpg"
+                              src="/images/courses-04.jpg"
                               alt=""
                             />
                             <div className="price">

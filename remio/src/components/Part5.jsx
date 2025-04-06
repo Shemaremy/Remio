@@ -7,7 +7,7 @@ const Part5 = () => {
         <div className="row">
           <div className="col-lg-5 offset-lg-1">
             <div className="left-image">
-              <img src="assets/images/cta-left-image.png" alt="" />
+              <img src="/images/cta-left-image.png" alt="" />
             </div>
           </div>
           <div className="col-lg-5 align-self-center">

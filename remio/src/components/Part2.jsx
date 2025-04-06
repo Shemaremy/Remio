@@ -20,7 +20,7 @@ const Part2 = () => {
           </div>
           <div className="col-lg-6">
             <div className="right-image">
-              <img src="assets/images/banner-right-image.png" alt="" />
+              <img src="/images/banner-right-image.png" alt="" />
             </div>
           </div>
         </div>
