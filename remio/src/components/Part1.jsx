@@ -7,6 +7,9 @@ import './lib/css/templatemo-eduwell-style.css';
 import './lib/css/owl.css';
 import './lib/css/lightbox.css';
 
+//import './lib/js/custom.js';
+//import 'isotope-layout';
+
 const Part1 = () => {
   useEffect(() => {
     // Menu Dropdown Toggle
@@ -58,6 +61,22 @@ const Part1 = () => {
       $(".menu-trigger").off("click");
       $('.scroll-to-section a[href*=\\#]:not([href=\\#])').off("click");
     };
+  }, []);
+
+
+  useEffect(() => {
+    $(window).scroll(function () {
+      var scroll = $(window).scrollTop();
+      var box = $('.header-text').height();
+      var header = $('header').height();
+
+      if (scroll >= box - header) {
+        $('header').addClass('background-header');
+      } else {
+        $('header').removeClass('background-header');
+      }
+    });
+
   }, []);
 
   return (
