@@ -1,6 +1,38 @@
-import React from "react";
+import React, { useEffect } from "react";
+
+import $ from "../owlSetup"; 
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
+
+
 
 const Part3 = () => {
+
+  useEffect(() => {
+    if ($ && $.fn && typeof $.fn.owlCarousel === "function") {
+      $(".owl-service-item").owlCarousel({
+        items: 4,
+        loop: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        smartSpeed: 700,
+        margin: 30,
+        responsive: {
+          0: { items: 1 },
+          768: { items: 2 },
+          992: { items: 3 },
+          1200: { items: 4 },
+        },
+      });
+    } else {
+      console.error("Owl Carousel did not initialize correctly.");
+      console.log("$.fn.owlCarousel is", $.fn.owlCarousel);
+    }
+  }, []);
+  
+
+
+
   return (
     <section className="services" id="services">
       <div className="container">

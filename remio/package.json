@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "bootstrap": "^5.3.5",
+    "jquery": "^3.7.1",
+    "owl.carousel": "^2.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
