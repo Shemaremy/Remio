@@ -197,44 +197,56 @@
 	});
 
 	$(document).ready(function () {
-	    $(document).on("scroll", onScroll);
-	    
-	    //smoothscroll
-	    $('.scroll-to-section a[href^="#"]').on('click', function (e) {
-	        e.preventDefault();
-	        $(document).off("scroll");
-	        
-	        $('.scroll-to-section a').each(function () {
-	            $(this).removeClass('active');
-	        })
-	        $(this).addClass('active');
-	      
-	        var target = this.hash,
-	        menu = target;
-	       	var target = $(this.hash);
-	        $('html, body').stop().animate({
-	            scrollTop: (target.offset().top) - 79
-	        }, 500, 'swing', function () {
-	            window.location.hash = target;
-	            $(document).on("scroll", onScroll);
-	        });
-	    });
+		$(document).on("scroll", onScroll);
+	
+		// smoothscroll
+		$('.scroll-to-section a[href^="#"]').on('click', function (e) {
+			e.preventDefault();
+			$(document).off("scroll");
+	
+			$('.scroll-to-section a').each(function () {
+				$(this).removeClass('active');
+			});
+			$(this).addClass('active');
+	
+			const hash = this.hash;
+			const target = $(hash);
+	
+			if (target.length) {
+				$('html, body').stop().animate({
+					scrollTop: target.offset().top - 79
+				}, 500, 'swing', function () {
+					window.location.hash = hash;
+					$(document).on("scroll", onScroll);
+				});
+			} else {
+				console.warn("Target not found for hash:", hash);
+			}
+		});
 	});
+	
 
-	function onScroll(event){
-	    var scrollPos = $(document).scrollTop();
-	    $('.nav a').each(function () {
-	        var currLink = $(this);
-	        var refElement = $(currLink.attr("href"));
-	        if (refElement.position().top <= scrollPos && refElement.position().top + refElement.height() > scrollPos) {
-	            $('.nav ul li a').removeClass("active");
-	            currLink.addClass("active");
-	        }
-	        else{
-	            currLink.removeClass("active");
-	        }
-	    });
+	function onScroll(event) {
+		var scrollPos = $(document).scrollTop();
+	
+		$('.nav a').each(function () {
+			var currLink = $(this);
+			var refElement = $(currLink.attr("href"));
+	
+			if (refElement.length) { // Check if element exists
+				var refTop = refElement.position().top;
+				var refBottom = refTop + refElement.height();
+	
+				if (refTop <= scrollPos && refBottom > scrollPos) {
+					$('.nav ul li a').removeClass("active");
+					currLink.addClass("active");
+				} else {
+					currLink.removeClass("active");
+				}
+			}
+		});
 	}
+	
 
 
 	// Page loading animation
@@ -295,19 +307,24 @@
     }
 
 
-	function visible(partial) {
-        var $t = partial,
-            $w = jQuery(window),
-            viewTop = $w.scrollTop(),
-            viewBottom = viewTop + $w.height(),
-            _top = $t.offset().top,
-            _bottom = _top + $t.height(),
-            compareTop = partial === true ? _bottom : _top,
-            compareBottom = partial === true ? _top : _bottom;
-
-        return ((compareBottom <= viewBottom) && (compareTop >= viewTop) && $t.is(':visible'));
-
-    }
+	function visible(el, partial) {
+		var $el = $(el); // 🔥 wrap it just in case
+		if ($el.length === 0) {
+			//console.error('Element not found:', el);
+			return false;
+		}
+	
+		var $w = $(window),
+			viewTop = $w.scrollTop(),
+			viewBottom = viewTop + $w.height(),
+			_top = $el.offset().top,
+			_bottom = _top + $el.height(),
+			compareTop = partial ? _bottom : _top,
+			compareBottom = partial ? _top : _bottom;
+	
+		return ((compareBottom <= viewBottom) && (compareTop >= viewTop) && $el.is(':visible'));
+	}
+	
 
     $(window).scroll(function() {
 

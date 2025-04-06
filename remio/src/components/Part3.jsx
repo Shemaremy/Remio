@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
-
-import $ from "../owlSetup"; 
-import "bootstrap/dist/js/bootstrap.bundle.min";
+import "../assets/js/owl-carousel.js"
 
 
 

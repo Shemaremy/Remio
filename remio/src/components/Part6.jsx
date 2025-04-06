@@ -1,6 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
+import "../assets/js/owl-carousel.js"
+import '../vendor/bootstrap/css/bootstrap.min.css';
+import '../assets/css/fontawesome.css';
+import '../assets/css/templatemo-eduwell-style.css';
+import '../assets/css/owl.css';
+import '../assets/css/lightbox.css';
 
 const Part6 = () => {
+
+  useEffect(() => {
+      if ($ && $.fn && typeof $.fn.owlCarousel === "function") {
+        $(".owl-testimonials").owlCarousel({
+          items: 4,
+          loop: true,
+          autoplay: true,
+          autoplayTimeout: 3000,
+          smartSpeed: 700,
+          margin: 30,
+          responsive: {
+            0: { items: 1 },
+            768: { items: 2 },
+            992: { items: 3 },
+            1200: { items: 3 },
+          },
+        });
+      } else {
+        console.error("Owl Carousel did not initialize correctly.");
+        console.log("$.fn.owlCarousel is", $.fn.owlCarousel);
+      }
+    }, []);
+
+
   return (
     <section className="testimonials" id="testimonials">
       <div className="container">
