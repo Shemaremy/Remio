@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "../assets/js/owl-carousel.js"
+import "./lib/js/owl-carousel.js"
 
 
 

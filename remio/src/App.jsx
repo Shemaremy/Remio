@@ -9,11 +9,11 @@ import Part6 from './components/Part6'
 import Part7 from './components/Part7'
 
 
-import './vendor/bootstrap/css/bootstrap.min.css';
-import './assets/css/fontawesome.css';
-import './assets/css/templatemo-eduwell-style.css';
-import './assets/css/owl.css';
-import './assets/css/lightbox.css';
+import './components/vendor/bootstrap/css/bootstrap.min.css';
+import './components/lib/css/fontawesome.css';
+import './components/lib/css/templatemo-eduwell-style.css';
+import './components/lib/css/owl.css';
+import './components/lib/css/lightbox.css';
 
 
 function App() {

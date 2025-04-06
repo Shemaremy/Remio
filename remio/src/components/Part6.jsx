@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import "../assets/js/owl-carousel.js"
-import '../vendor/bootstrap/css/bootstrap.min.css';
-import '../assets/css/fontawesome.css';
-import '../assets/css/templatemo-eduwell-style.css';
-import '../assets/css/owl.css';
-import '../assets/css/lightbox.css';
+import "./lib/js/owl-carousel.js";
+import './vendor/bootstrap/css/bootstrap.min.css';
+import './lib/css/fontawesome.css';
+import './lib/css/templatemo-eduwell-style.css';
+import './lib/css/owl.css';
+import './lib/css/lightbox.css';
 
 const Part6 = () => {
 
