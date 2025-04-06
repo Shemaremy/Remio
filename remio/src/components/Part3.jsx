@@ -16,7 +16,7 @@ const Part3 = () => {
         smartSpeed: 700,
         margin: 30,
         responsive: {
-          0: { items: 1 },
+          0: { items: 1, dots: false },
           768: { items: 2 },
           992: { items: 3 },
           1200: { items: 4 },

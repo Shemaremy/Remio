@@ -28,16 +28,16 @@ const Part7 = () => {
                       <i className="fa fa-phone"></i>
                     </div>
                     <h4>Phone</h4>
-                    <span>010-020-0340</span>
+                    <span>+250 783 674 289</span>
                   </div>
                 </div>
                 <div className="col-lg-4">
                   <div className="contact-info">
                     <div className="icon">
-                      <i className="fa fa-phone"></i>
+                      <i className="fa fa-envelope"></i>
                     </div>
-                    <h4>Mobile</h4>
-                    <span>090-080-0760</span>
+                    <h4>Email</h4>
+                    <span>remyshema20@gmail.com</span>
                   </div>
                 </div>
               </div>
