@@ -23,14 +23,6 @@ const Part1 = () => {
                 <li className="scroll-to-section">
                   <a href="#courses">Courses</a>
                 </li>
-                <li className="has-sub">
-                  <a href="#">Pages</a>
-                  <ul className="sub-menu">
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="our-services.html">Our Services</a></li>
-                    <li><a href="contact-us.html">Contact Us</a></li>
-                  </ul>
-                </li>
                 <li className="scroll-to-section">
                   <a href="#testimonials">Testimonials</a>
                 </li>
