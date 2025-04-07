@@ -31,16 +31,49 @@ const Part6 = () => {
     }, []);
 
 
-  const testimonials = [
-    { text: "just think about TemplateMo if you need free CSS templates for your website", name: "Catherine Walk", role: "CEO & Founder" },
-    { text: "think about our website first when you need free HTML templates for your website", name: "David Martin", role: "CTO of Tech Company" },
-    { text: "just think about our website wherever you need free templates for your website", name: "Sophia Whity", role: "CEO and Co-Founder" },
-    { text: "Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem.", name: "Helen Shiny", role: "Tech Officer" },
-    { text: "Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem.", name: "George Soft", role: "Gadget Reviewer" },
-    { text: "Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem.", name: "Andrew Hall", role: "Marketing Manager" },
-    { text: "Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem.", name: "Maxi Power", role: "Fashion Designer" },
-    { text: "Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem.", name: "Olivia Too", role: "Creative Designer" },
-  ];
+    const testimonials = [
+      { 
+        text: "The Front-end Development course helped me master React and build my first mobile app. Highly recommended for aspiring developers!", 
+        name: "Catherine Walk", 
+        role: "Front-end Developer" 
+      },
+      { 
+        text: "After completing the Backend Development course, I landed a job as a Node.js developer. The practical skills taught here are unmatched!", 
+        name: "David Martin", 
+        role: "Backend Engineer" 
+      },
+      { 
+        text: "Learning cloud technologies like AWS and .NET Core opened new doors for my career. The Cloud Computing course is a must!", 
+        name: "Sophia Whity", 
+        role: "Cloud Solutions Architect" 
+      },
+      { 
+        text: "I never thought graphic design could be this fun and impactful. Thanks to this course, I now freelance with confidence.", 
+        name: "Helen Shiny", 
+        role: "Graphic Designer" 
+      },
+      { 
+        text: "Front-end development used to scare me, but this course made it super approachable and exciting. Tailwind and React are game-changers!", 
+        name: "George Soft", 
+        role: "UI Developer" 
+      },
+      { 
+        text: "I joined the backend course to upskill—and I ended up building my own API from scratch. Totally worth it!", 
+        name: "Andrew Hall", 
+        role: "Software Developer" 
+      },
+      { 
+        text: "Cloud computing felt overwhelming before, but this course made it clear and hands-on. I’m now managing deployments confidently.", 
+        name: "Maxi Power", 
+        role: "DevOps Engineer" 
+      },
+      { 
+        text: "From photo editing to animation, the Graphic Design course boosted both my creativity and portfolio. I loved every session.", 
+        name: "Olivia Too", 
+        role: "Creative Designer" 
+      },
+    ];
+    
 
   return (
     <section className="testimonials" id="testimonials">
@@ -50,7 +83,7 @@ const Part6 = () => {
             <div className="section-heading">
               <h6>Testimonials</h6>
               <h4>
-                What They <em>Think</em>
+                What People <em>Say</em>
               </h4>
             </div>
           </div>

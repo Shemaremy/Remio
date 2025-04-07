@@ -1,6 +1,12 @@
 import React from "react";
 
 const Part7 = () => {
+  const date = new Date();
+
+  const handleSubmit = () => {
+    window.reload();
+  };
+ 
   return (
     <section className="contact-us" id="contact-section">
       <div className="container">
@@ -8,7 +14,7 @@ const Part7 = () => {
           <div className="col-lg-8">
             <div id="map">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7151.84524236698!2d-122.19494600413192!3d47.56605883252286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5490695e625f8965%3A0xf99b055e76477def!2sNewcastle%20Beach%20Park%20Playground%2C%20Bellevue%2C%20WA%2098006%2C%20USA!5e0!3m2!1sen!2sth!4v1644335269264!5m2!1sen!2sth"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d996.8736565897683!2d30.10309159755706!3d-1.955562124361725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca6f907feabf7%3A0x207b54b64c8ffb34!2sAdventist%20University%20of%20Central%20Africa%2C%20Science%20and%20Technology%20Centre!5e0!3m2!1sen!2srw!4v1744040066081!5m2!1sen!2srw"
                 width="100%"
                 height="420px"
                 frameBorder="0"
@@ -53,8 +59,7 @@ const Part7 = () => {
                       Say <em>Hello</em>
                     </h4>
                     <p>
-                      IF you need a working contact form by PHP script, please
-                      visit TemplateMo's contact page for more info.
+                    Do not hesitate to contact us if you have any questions, ideas, or just want to chat — we’re here to help
                     </p>
                   </div>
                 </div>
@@ -97,6 +102,7 @@ const Part7 = () => {
                       type="submit"
                       id="form-submit"
                       className="main-gradient-button"
+                      onSubmit={handleSubmit}
                     >
                       Send Message
                     </button>
@@ -108,44 +114,30 @@ const Part7 = () => {
           <div className="col-lg-12">
             <ul className="social-icons">
               <li>
-                <a href="#">
-                  <i className="fa fa-facebook"></i>
+                <a href="https://www.instagram.com/shema.remy">
+                  <i className="fab fa-instagram"></i>
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <i className="fa fa-twitter"></i>
+                <a href="https://x.com/Shemaremi/">
+                  <i className="fab fa-x-twitter"></i>
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="https://linkedin.com/in/shema-remy-ba3229288">
                   <i className="fa fa-linkedin"></i>
                 </a>
               </li>
               <li>
-                <a href="#">
-                  <i className="fa fa-rss"></i>
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                  <i className="fa fa-dribbble"></i>
+                <a href="https://github.com/Shemaremy">
+                  <i className="fab fa-github"></i>
                 </a>
               </li>
             </ul>
           </div>
           <div className="col-lg-12">
             <p className="copyright">
-              Copyright © 2022 EduWell Co., Ltd. All Rights Reserved.
-              <br />
-              Design:{" "}
-              <a
-                rel="sponsored"
-                href="https://templatemo.com"
-                target="_blank"
-              >
-                TemplateMo
-              </a>
+              Copyright © {date.getFullYear()} Remio. All Rights Reserved.
             </p>
           </div>
         </div>

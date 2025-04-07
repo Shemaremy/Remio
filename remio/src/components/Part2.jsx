@@ -9,7 +9,7 @@ const Part2 = () => {
             <div className="header-text">
               <h6>Welcome to our school</h6>
               <h2>
-                Best Place To Learn Graphic <em>Design!</em>
+                Best Place To Learn Soft <em>Courses!</em>
               </h2>
               <div className="main-button-gradient">
                 <div className="scroll-to-section">

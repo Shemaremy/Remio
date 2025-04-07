@@ -223,7 +223,7 @@ const Part4 = () => {
                               <span>{course.weeks}</span>
                               <span className="last-span">{course.certificates}</span>
                               <div className="text-button">
-                                <a href="contact-us.html">Subscribe Course</a>
+                                <a href="contact-us.html">Apply Course</a>
                               </div>
                             </div>
                           </div>
