@@ -1,6 +1,188 @@
-import React from "react";
+import React, { useEffect } from "react";
+
+
 
 const Part4 = () => {
+
+
+  // --------- Accordion togglig for courses -------------------
+  useEffect(() => {
+    const Accordion = {
+      settings: {
+        first_expanded: false,
+        toggle: false,
+      },
+
+      openAccordion: function (toggle, content) {
+        if (content.children.length) {
+          toggle.classList.add("is-open");
+          let final_height = Math.floor(content.children[0].offsetHeight);
+          content.style.height = final_height + "px";
+        }
+      },
+
+      closeAccordion: function (toggle, content) {
+        toggle.classList.remove("is-open");
+        content.style.height = 0;
+      },
+
+      init: function (el) {
+        const _this = this;
+
+        let is_first_expanded = _this.settings.first_expanded;
+        if (el.classList.contains("is-first-expanded")) is_first_expanded = true;
+        let is_toggle = _this.settings.toggle;
+        if (el.classList.contains("is-toggle")) is_toggle = true;
+
+        const sections = el.getElementsByClassName("accordion");
+        const all_toggles = el.getElementsByClassName("accordion-head");
+        const all_contents = el.getElementsByClassName("accordion-body");
+        for (let i = 0; i < sections.length; i++) {
+          const section = sections[i];
+          const toggle = all_toggles[i];
+          const content = all_contents[i];
+
+          toggle.addEventListener("click", function () {
+            if (!is_toggle) {
+              for (let a = 0; a < all_contents.length; a++) {
+                _this.closeAccordion(all_toggles[a], all_contents[a]);
+              }
+
+              _this.openAccordion(toggle, content);
+            } else {
+              if (toggle.classList.contains("is-open")) {
+                _this.closeAccordion(toggle, content);
+              } else {
+                _this.openAccordion(toggle, content);
+              }
+            }
+          });
+
+          if (i === 0 && is_first_expanded) {
+            _this.openAccordion(toggle, content);
+          }
+        }
+      },
+    };
+
+    const accordions = document.getElementsByClassName("accordions");
+    for (let i = 0; i < accordions.length; i++) {
+      Accordion.init(accordions[i]);
+    }
+
+    const handleClick = (e) => {
+      const target = e.target;
+      if (target.matches(".naccs .menu div")) {
+        const numberIndex = Array.from(target.parentNode.children).indexOf(target);
+
+        if (!target.classList.contains("active")) {
+          document.querySelectorAll(".naccs .menu div").forEach((el) => el.classList.remove("active"));
+          document.querySelectorAll(".naccs ul li").forEach((el) => el.classList.remove("active"));
+
+          target.classList.add("active");
+          const targetLi = document.querySelectorAll(".naccs ul li")[numberIndex];
+          targetLi.classList.add("active");
+
+          const listItemHeight = targetLi.offsetHeight;
+          document.querySelector(".naccs ul").style.height = listItemHeight + "px";
+        }
+      }
+    };
+
+    document.addEventListener("click", handleClick);
+
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, []);
+
+
+
+  // --------- Courses container -------------------------------
+  const courses = [
+    {
+      title: "Web Development",
+      image: "/images/courses-01.jpg",
+      price: "$128",
+      description: (
+        <>
+          Did you know that you can visit{" "}
+          <a
+            rel="nofollow"
+            href="https://www.toocss.com/"
+            target="_blank"
+          >
+            TooCSS website
+          </a>{" "}
+          for latest listing of HTML templates and a variety of useful templates. <br />
+          <br />
+          You just need to go and visit that website right now. IF you have any suggestion or comment about
+          this template, you can feel free to go to contact page for our email address.
+        </>
+      ),
+      duration: "36 Hours",
+      weeks: "4 Weeks",
+      certificates: "3 Certificates"
+    },
+    {
+      title: "Graphic Design",
+      image: "/images/courses-02.jpg",
+      price: "$156",
+      description: (
+        <>
+          You are not allowed to redistribute this template ZIP file on any other website without a permission
+          from us.
+          <br />
+          <br />
+          There are some unethical people on this world copied and reposted our templates without any
+          permission from us. Their Karma will hit them really hard. Yeah!
+        </>
+      ),
+      duration: "48 Hours",
+      weeks: "6 Weeks",
+      certificates: "1 Certificate"
+    },
+    {
+      title: "Web Design",
+      image: "/images/courses-03.jpg",
+      price: "$184",
+      description: (
+        <>
+          Quinoa roof party squid prism sustainable letterpress cray hammock tumeric man bun mixtape
+          tofu subway tile cronut. Deep v ennui subway tile organic seitan.
+          <br />
+          <br />
+          Kogi VHS freegan bicycle rights try-hard green juice probably haven't heard of them cliche
+          la croix af chillwave.
+        </>
+      ),
+      duration: "28 Hours",
+      weeks: "4 Weeks",
+      certificates: "1 Certificate"
+    },
+    {
+      title: "WordPress",
+      image: "/images/courses-04.jpg",
+      price: "$76",
+      description: (
+        <>
+          Quinoa roof party squid prism sustainable letterpress cray hammock tumeric man bun mixtape
+          tofu subway tile cronut. Deep v ennui subway tile organic seitan.
+          <br />
+          <br />
+          Kogi VHS freegan bicycle rights try-hard green juice probably haven't heard of them cliche
+          la croix af chillwave.
+        </>
+      ),
+      duration: "48 Hours",
+      weeks: "4 Weeks",
+      certificates: "2 Certificates"
+    }
+  ];
+
+
+
+
   return (
     <section className="our-courses" id="courses">
       <div className="container">
@@ -23,160 +205,40 @@ const Part4 = () => {
                 <div className="row">
                   <div className="col-lg-3">
                     <div className="menu">
-                      <div className="active gradient-border">
-                        <span>Web Development</span>
-                      </div>
-                      <div className="gradient-border">
-                        <span>Graphic Design</span>
-                      </div>
-                      <div className="gradient-border">
-                        <span>Web Design</span>
-                      </div>
-                      <div className="gradient-border">
-                        <span>WordPress</span>
-                      </div>
+                      {courses.map((course, index) => (
+                        <div
+                          className={`gradient-border${index === 0 ? " active" : ""}`}
+                          key={index}
+                        >
+                          {course.title}
+                        </div>
+                      ))}
                     </div>
                   </div>
                   <div className="col-lg-9">
                     <ul className="nacc">
-                      <li className="active">
-                        <div>
-                          <div className="left-image">
-                            <img
-                              src="/images/courses-01.jpg"
-                              alt=""
-                            />
-                            <div className="price">
-                              <h6>$128</h6>
+                      {courses.map((course, index) => (
+                        <li className={index === 0 ? "active" : ""} key={index}>
+                          <div>
+                            <div className="left-image">
+                              <img src={course.image} alt="" />
+                              <div className="price">
+                                <h6>{course.price}</h6>
+                              </div>
+                            </div>
+                            <div className="right-content">
+                              <h4>{course.title}</h4>
+                              <p>{course.description}</p>
+                              <span>{course.duration}</span>
+                              <span>{course.weeks}</span>
+                              <span className="last-span">{course.certificates}</span>
+                              <div className="text-button">
+                                <a href="contact-us.html">Subscribe Course</a>
+                              </div>
                             </div>
                           </div>
-                          <div className="right-content">
-                            <h4>Web Development</h4>
-                            <p>
-                              Did you know that you can visit{" "}
-                              <a
-                                rel="nofollow"
-                                href="https://www.toocss.com/"
-                                target="_blank"
-                              >
-                                TooCSS website
-                              </a>{" "}
-                              for latest listing of HTML templates and a variety
-                              of useful templates. <br />
-                              <br />
-                              You just need to go and visit that website right
-                              now. IF you have any suggestion or comment about
-                              this template, you can feel free to go to contact
-                              page for our email address.
-                            </p>
-                            <span>36 Hours</span>
-                            <span>4 Weeks</span>
-                            <span className="last-span">3 Certificates</span>
-                            <div className="text-button">
-                              <a href="contact-us.html">Subscribe Course</a>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div>
-                          <div className="left-image">
-                            <img
-                              src="/images/courses-02.jpg"
-                              alt=""
-                            />
-                            <div className="price">
-                              <h6>$156</h6>
-                            </div>
-                          </div>
-                          <div className="right-content">
-                            <h4>Creative Graphic Design</h4>
-                            <p>
-                              You are not allowed to redistribute this template
-                              ZIP file on any other website without a permission
-                              from us.
-                              <br />
-                              <br />
-                              There are some unethical people on this world
-                              copied and reposted our templates without any
-                              permission from us. Their Karma will hit them
-                              really hard. Yeah!
-                            </p>
-                            <span>48 Hours</span>
-                            <span>6 Weeks</span>
-                            <span className="last-span">1 Certificate</span>
-                            <div className="text-button">
-                              <a href="contact-us.html">Subscribe Course</a>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div>
-                          <div className="left-image">
-                            <img
-                              src="/images/courses-03.jpg"
-                              alt=""
-                            />
-                            <div className="price">
-                              <h6>$184</h6>
-                            </div>
-                          </div>
-                          <div className="right-content">
-                            <h4>Web Design</h4>
-                            <p>
-                              Quinoa roof party squid prism sustainable
-                              letterpress cray hammock tumeric man bun mixtape
-                              tofu subway tile cronut. Deep v ennui subway tile
-                              organic seitan.
-                              <br />
-                              <br />
-                              Kogi VHS freegan bicycle rights try-hard green
-                              juice probably haven't heard of them cliche la
-                              croix af chillwave.
-                            </p>
-                            <span>28 Hours</span>
-                            <span>4 Weeks</span>
-                            <span className="last-span">1 Certificate</span>
-                            <div className="text-button">
-                              <a href="contact-us.html">Subscribe Course</a>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div>
-                          <div className="left-image">
-                            <img
-                              src="/images/courses-04.jpg"
-                              alt=""
-                            />
-                            <div className="price">
-                              <h6>$76</h6>
-                            </div>
-                          </div>
-                          <div className="right-content">
-                            <h4>WordPress Introduction</h4>
-                            <p>
-                              Quinoa roof party squid prism sustainable
-                              letterpress cray hammock tumeric man bun mixtape
-                              tofu subway tile cronut. Deep v ennui subway tile
-                              organic seitan.
-                              <br />
-                              <br />
-                              Kogi VHS freegan bicycle rights try-hard green
-                              juice probably haven't heard of them cliche la
-                              croix af chillwave.
-                            </p>
-                            <span>48 Hours</span>
-                            <span>4 Weeks</span>
-                            <span className="last-span">2 Certificates</span>
-                            <div className="text-button">
-                              <a href="contact-us.html">Subscribe Course</a>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
