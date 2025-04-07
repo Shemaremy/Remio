@@ -101,23 +101,16 @@ const Part4 = () => {
   // --------- Courses container -------------------------------
   const courses = [
     {
-      title: "Web Development",
+      title: "Front-end Dvt",
       image: "/images/courses-01.jpg",
       price: "$128",
       description: (
         <>
-          Did you know that you can visit{" "}
-          <a
-            rel="nofollow"
-            href="https://www.toocss.com/"
-            target="_blank"
-          >
-            TooCSS website
-          </a>{" "}
-          for latest listing of HTML templates and a variety of useful templates. <br />
+          In this course, you'll learn core front-end development technologies including{" "}
+          <strong>HTML, CSS, Tailwind, React.js, and React Native</strong>. 
           <br />
-          You just need to go and visit that website right now. IF you have any suggestion or comment about
-          this template, you can feel free to go to contact page for our email address.
+          <br />
+          These tools will equip you to build responsive, interactive, and modern web and mobile interfaces.
         </>
       ),
       duration: "36 Hours",
@@ -125,17 +118,16 @@ const Part4 = () => {
       certificates: "3 Certificates"
     },
     {
-      title: "Graphic Design",
+      title: "Backend Dvt",
       image: "/images/courses-02.jpg",
       price: "$156",
       description: (
         <>
-          You are not allowed to redistribute this template ZIP file on any other website without a permission
-          from us.
+          Master powerful backend technologies such as{" "}
+          <strong>Node.js, Express.js, MongoDB, SQL, Java, C#, and C++</strong>. 
           <br />
           <br />
-          There are some unethical people on this world copied and reposted our templates without any
-          permission from us. Their Karma will hit them really hard. Yeah!
+          This course will prepare you to build robust APIs and server-side logic for scalable applications.
         </>
       ),
       duration: "48 Hours",
@@ -143,17 +135,16 @@ const Part4 = () => {
       certificates: "1 Certificate"
     },
     {
-      title: "Web Design",
+      title: "Cloud Computing",
       image: "/images/courses-03.jpg",
       price: "$184",
       description: (
         <>
-          Quinoa roof party squid prism sustainable letterpress cray hammock tumeric man bun mixtape
-          tofu subway tile cronut. Deep v ennui subway tile organic seitan.
+          Dive into the world of cloud with technologies like{" "}
+          <strong>AWS and .NET Core</strong>. 
           <br />
           <br />
-          Kogi VHS freegan bicycle rights try-hard green juice probably haven't heard of them cliche
-          la croix af chillwave.
+          You'll gain practical skills in deploying and managing scalable applications in cloud environments.
         </>
       ),
       duration: "28 Hours",
@@ -161,17 +152,16 @@ const Part4 = () => {
       certificates: "1 Certificate"
     },
     {
-      title: "WordPress",
+      title: "Graphic Design",
       image: "/images/courses-04.jpg",
       price: "$76",
       description: (
         <>
-          Quinoa roof party squid prism sustainable letterpress cray hammock tumeric man bun mixtape
-          tofu subway tile cronut. Deep v ennui subway tile organic seitan.
+          This course focuses on creative tools including{" "}
+          <strong>Adobe Photoshop, Illustrator, After Effects, and Lightroom</strong>. 
           <br />
           <br />
-          Kogi VHS freegan bicycle rights try-hard green juice probably haven't heard of them cliche
-          la croix af chillwave.
+          You'll learn how to craft professional visuals, edit images, and design engaging content for digital media.
         </>
       ),
       duration: "48 Hours",
@@ -179,6 +169,7 @@ const Part4 = () => {
       certificates: "2 Certificates"
     }
   ];
+  
 
 
 
@@ -194,8 +185,7 @@ const Part4 = () => {
                 What You Can <em>Learn</em>
               </h4>
               <p>
-                You just think about TemplateMo whenever you need free CSS
-                templates for your business website
+                Explore our expert-led courses designed to equip you with the latest skills in our modern tech world.
               </p>
             </div>
           </div>

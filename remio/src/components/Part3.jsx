@@ -1,11 +1,70 @@
 import React, { useEffect } from "react";
-import "./lib/js/owl-carousel.js"
+import "./lib/js/owl-carousel.js";
 
-
-
+const services = [
+  {
+    icon: "/images/service-icon-01.png",
+    title: "Useful Tricks",
+    description: "Discover tips and shortcuts designed to improve productivity and simplify daily tasks.",
+  },
+  {
+    icon: "/images/service-icon-02.png",
+    title: "Creative Ideas",
+    description: "Unlock fresh perspectives and innovative solutions for all your learning needs.",
+  },
+  {
+    icon: "/images/service-icon-03.png",
+    title: "Ready Target",
+    description: "Achieve your goals efficiently with our pre-defined learning objectives and paths.",
+  },
+  {
+    icon: "/images/service-icon-04.png",
+    title: "Technology",
+    description: "Explore modern tech tools and platforms tailored for effective digital education.",
+  },
+  {
+    icon: "/images/service-icon-01.png",
+    title: "Useful Tricks",
+    description: "Learn practical insights and time-saving techniques for smarter study routines.",
+  },
+  {
+    icon: "/images/service-icon-02.png",
+    title: "Creative Ideas",
+    description: "Fuel your imagination with methods that encourage original thinking and creativity.",
+  },
+  {
+    icon: "/images/service-icon-03.png",
+    title: "Ready Target",
+    description: "Stay focused with clear, measurable outcomes in every course and subject.",
+  },
+  {
+    icon: "/images/service-icon-04.png",
+    title: "Technology",
+    description: "Utilize cutting-edge innovations that support virtual learning and engagement.",
+  },
+  {
+    icon: "/images/service-icon-01.png",
+    title: "Useful Tricks",
+    description: "Empower your workflow with clever educational hacks and hidden features.",
+  },
+  {
+    icon: "/images/service-icon-02.png",
+    title: "Creative Ideas",
+    description: "Enhance lesson plans or projects with vibrant and inspiring approaches.",
+  },
+  {
+    icon: "/images/service-icon-03.png",
+    title: "Ready Target",
+    description: "Track progress confidently with our goal-oriented learning strategy.",
+  },
+  {
+    icon: "/images/service-icon-04.png",
+    title: "Technology",
+    description: "Stay ahead with continuous updates on emerging educational technologies.",
+  },
+];
 
 const Part3 = () => {
-
   useEffect(() => {
     if ($ && $.fn && typeof $.fn.owlCarousel === "function") {
       $(".owl-service-item").owlCarousel({
@@ -27,9 +86,6 @@ const Part3 = () => {
       console.log("$.fn.owlCarousel is", $.fn.owlCarousel);
     }
   }, []);
-  
-
-
 
   return (
     <section className="services" id="services">
@@ -45,114 +101,17 @@ const Part3 = () => {
           </div>
           <div className="col-lg-12">
             <div className="owl-service-item owl-carousel">
-              <div className="item">
-                <div className="service-item">
-                  <div className="icon">
-                    <img src="/images/service-icon-01.png" alt="" />
+              {services.map((service, index) => (
+                <div className="item" key={index}>
+                  <div className="service-item">
+                    <div className="icon">
+                      <img src={service.icon} alt={service.title} />
+                    </div>
+                    <h4>{service.title}</h4>
+                    <p>{service.description}</p>
                   </div>
-                  <h4>Useful Tricks</h4>
-                  <p>EduWell is the professional HTML5 template for your school or university websites.</p>
                 </div>
-              </div>
-              <div className="item">
-                <div className="service-item">
-                  <div className="icon">
-                    <img src="/images/service-icon-02.png" alt="" />
-                  </div>
-                  <h4>Creative Ideas</h4>
-                  <p>You can download and use this EduWell Template for your teaching and learning stuffs.</p>
-                </div>
-              </div>
-              <div className="item">
-                <div className="service-item">
-                  <div className="icon">
-                    <img src="/images/service-icon-03.png" alt="" />
-                  </div>
-                  <h4>Ready Target</h4>
-                  <p>Please tell your friends about the best CSS template website that is TemplateMo.</p>
-                </div>
-              </div>
-              <div className="item">
-                <div className="service-item">
-                  <div className="icon">
-                    <img src="/images/service-icon-04.png" alt="" />
-                  </div>
-                  <h4>Technology</h4>
-                  <p>Aenean bibendum consectetur ex eu porttitor. Pellentesque id ultrices metus.</p>
-                </div>
-              </div>
-              <div className="item">
-                <div className="service-item">
-                  <div className="icon">
-                    <img src="/images/service-icon-01.png" alt="" />
-                  </div>
-                  <h4>Useful Tricks</h4>
-                  <p>In non nisi eget magna efficitur ultricies non quis sapien. Pellentesque tellus.</p>
-                </div>
-              </div>
-              <div className="item">
-                <div className="service-item">
-                  <div className="icon">
-                    <img src="/images/service-icon-02.png" alt="" />
-                  </div>
-                  <h4>Creative Ideas</h4>
-                  <p>Aenean bibendum consectetur ex eu porttitor. Pellentesque id ultrices metus.</p>
-                </div>
-              </div>
-              <div className="item">
-                <div className="service-item">
-                  <div className="icon">
-                    <img src="/images/service-icon-03.png" alt="" />
-                  </div>
-                  <h4>Ready Target</h4>
-                  <p>In non nisi eget magna efficitur ultricies non quis sapien. Pellentesque tellus.</p>
-                </div>
-              </div>
-              <div className="item">
-                <div className="service-item">
-                  <div className="icon">
-                    <img src="/images/service-icon-04.png" alt="" />
-                  </div>
-                  <h4>Technology</h4>
-                  <p>Aenean bibendum consectetur ex eu porttitor. Pellentesque id ultrices metus.</p>
-                </div>
-              </div>
-              <div className="item">
-                <div className="service-item">
-                  <div className="icon">
-                    <img src="/images/service-icon-01.png" alt="" />
-                  </div>
-                  <h4>Useful Tricks</h4>
-                  <p>In non nisi eget magna efficitur ultricies non quis sapien. Pellentesque tellus.</p>
-                </div>
-              </div>
-              <div className="item">
-                <div className="service-item">
-                  <div className="icon">
-                    <img src="/images/service-icon-02.png" alt="" />
-                  </div>
-                  <h4>Creative Ideas</h4>
-                  <p>Aenean bibendum consectetur ex eu porttitor. Pellentesque id ultrices metus.</p>
-                </div>
-              </div>
-              <div className="item">
-                <div className="service-item">
-                  <div className="icon">
-                    <img src="/images/service-icon-03.png" alt="" />
-                  </div>
-                  <h4>Ready Target</h4>
-                  <p>In non nisi eget magna efficitur ultricies non quis sapien. Pellentesque tellus.</p>
-                </div>
-              </div>
-              <div className="item">
-                <div className="service-item">
-                  <div className="icon">
-                    <img src="/images/service-icon-04.png" alt="" />
-                  </div>
-                  <h4>Technology</h4>
-                  <p>Praesent accumsan condimentum arcu, id porttitor est semper nec. Nunc diam lorem.</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
